@@ -13,14 +13,10 @@ button {
 :root {
   --background: #ffffff;
   --foreground: #171717;
-}
 
-/* @media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-} */
+  --font-size-regular: 1rem;
+  --font-size-small: 0.8rem;
+}
 
 html,
 body {
@@ -35,10 +31,3 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-
-/* 
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
-} */
