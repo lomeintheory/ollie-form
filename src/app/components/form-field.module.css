@@ -1,0 +1,36 @@
+.inputFieldContainer {
+  display: flex;
+  flex-direction: column;
+  flex: 0 1 auto;
+  position: relative;
+}
+
+.inputField {
+  padding: 0.3rem;
+}
+
+.inputField::placeholder {
+  font-size: var(--font-size-regular);
+  font-style: italic;
+  color: rgb(188, 188, 188);
+}
+
+.optionalLabel {
+  font-size: var(--font-size-small);
+  font-style: italic;
+}
+
+.errorMessage {
+  color: rgb(250, 15, 15);
+  position: absolute;
+  top: 100%;
+  left: 0;
+  font-size: var(--font-size-small);
+}
+
+.passwordRequirements {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  font-size: var(--font-size-small);
+}

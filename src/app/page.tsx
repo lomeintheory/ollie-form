@@ -32,7 +32,7 @@ export default function Home() {
   };
 
   return (
-    <div className={styles.page}>
+    <div aria-label='Ollie Sign Up Page' className={styles.page}>
       <main className={styles.mainContainer}>
         <div className={styles.imageContainer}>
           <Image
@@ -49,7 +49,7 @@ export default function Home() {
             type='email'
             id='email'
             placeholder='andrewlo957@gmail.com'
-            register={register('email')}
+            register={register}
             error={errors.email}
             label='Email'
           />
@@ -57,15 +57,16 @@ export default function Home() {
             type='password'
             id='password'
             placeholder='********'
-            register={register('password')}
+            register={register}
             error={errors.password}
             label='Password:'
+            passwordRequirements='Must contain at least 8 characters, 1 letter, 1 number, and 1 special character'
           />
           <FormField
             type='password'
             id='confirmPassword'
             placeholder='********'
-            register={register('confirmPassword')}
+            register={register}
             error={errors.confirmPassword}
             label='Confirm Password:'
           />
@@ -73,7 +74,7 @@ export default function Home() {
             type='text'
             id='petName'
             placeholder='Wally'
-            register={register('petName')}
+            register={register}
             error={errors.petName}
             label='Pet Name'
           />
@@ -81,19 +82,22 @@ export default function Home() {
             type='text'
             id='petWeight'
             placeholder='32'
-            register={register('petWeight')}
+            register={register}
             error={errors.petWeight}
             label='Pet Weight'
           />
           <FormField
             type='text'
             id='idealPetWeight'
-            placeholder='andrewlo957@gmail.com'
-            register={register('idealPetWeight')}
+            placeholder='27'
+            register={register}
             error={errors.idealPetWeight}
             label='Ideal Pet Weight'
+            optional={true}
           />
-          <button type='submit'>Submit</button>
+          <button type='submit' className={styles.formSubmitButton}>
+            Submit
+          </button>
         </form>
       </main>
     </div>
