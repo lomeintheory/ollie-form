@@ -5,6 +5,7 @@ import styles from './page.module.css';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { userSignUpSchema } from './validators/UserSignUpSchema';
 import { SubmitHandler, useForm } from 'react-hook-form';
+import FormField from './components/FormField';
 
 interface FormData {
   email: string;
@@ -44,23 +45,55 @@ export default function Home() {
           />
         </div>
         <form className={styles.signUpForm} onSubmit={handleSubmit(formSubmit)}>
-          <div className={styles.inputFieldContainer}>
-            <label htmlFor='email'>Email</label>
-            <input
-              type='email'
-              id='email'
-              placeholder='andrewlo957@gmail.com'
-              {...register('email')}
-            />
-            {errors.email && <div>{errors.email.message}</div>}
-          </div>
-
-          {/* <input />
-          <input />
-          <input />
-          <input />
-          <input /> */}
-          <button>Submit</button>
+          <FormField
+            type='email'
+            id='email'
+            placeholder='andrewlo957@gmail.com'
+            register={register('email')}
+            error={errors.email}
+            label='Email'
+          />
+          <FormField
+            type='password'
+            id='password'
+            placeholder='********'
+            register={register('password')}
+            error={errors.password}
+            label='Password:'
+          />
+          <FormField
+            type='password'
+            id='confirmPassword'
+            placeholder='********'
+            register={register('confirmPassword')}
+            error={errors.confirmPassword}
+            label='Confirm Password:'
+          />
+          <FormField
+            type='text'
+            id='petName'
+            placeholder='Wally'
+            register={register('petName')}
+            error={errors.petName}
+            label='Pet Name'
+          />
+          <FormField
+            type='text'
+            id='petWeight'
+            placeholder='32'
+            register={register('petWeight')}
+            error={errors.petWeight}
+            label='Pet Weight'
+          />
+          <FormField
+            type='text'
+            id='idealPetWeight'
+            placeholder='andrewlo957@gmail.com'
+            register={register('idealPetWeight')}
+            error={errors.idealPetWeight}
+            label='Ideal Pet Weight'
+          />
+          <button type='submit'>Submit</button>
         </form>
       </main>
     </div>
