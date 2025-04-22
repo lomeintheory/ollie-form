@@ -41,6 +41,11 @@
   width: 100%;
 }
 
+.inputFieldContainer {
+  display: flex;
+  flex-direction: column;
+}
+
 @media (max-width: 768px) {
   .mainContainer {
     flex-direction: column;
